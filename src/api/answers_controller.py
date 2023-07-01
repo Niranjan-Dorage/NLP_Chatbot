@@ -1,18 +1,17 @@
-from fastapi import FastAPI
+from fastapi import APIRouter
 from pydantic import BaseModel
 import spacy
 
 import data
 
-app = FastAPI()
+router = APIRouter()
 nlp = spacy.load("en_core_web_sm")
 
 class Question(BaseModel):
     question: str
 
-
-@app.post("/answer")
-def answer(question: Question):
+@router.post("/answer")
+async def answer(question: Question):
     
     doc = nlp(question.question)
     better_answer = None
