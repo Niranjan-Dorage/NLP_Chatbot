@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 import spacy
 
-from data.faq import data as data
+from ..data.faq import data as data
 
 router = APIRouter()
 nlp = spacy.load("en_core_web_sm")
