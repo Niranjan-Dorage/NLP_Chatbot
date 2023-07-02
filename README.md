@@ -30,3 +30,23 @@ uvicorn application:app --reload
 Ready! API is running! 
 
 Address: `http://localhost:8000/`
+
+## Docker
+
+You guys can run it on Docker. For this you will need to create an image and run a container from it. In the folder where the Dockerfile file is, run the following commands:
+
+```
+docker build -t <<name_image>> .
+```
+
+Afterwards
+
+```
+docker run -d --name <<name_container>> -p 80:80 <<name_image>>
+```
+
+The address keep up same.
+
+It's worth mentioning that FastAPI automatically provide the API documentation. For access it, you can go `http://127.0.0.1:8000/docs`.
+
+That's it! Bye!
