@@ -1,6 +1,6 @@
-from fastapi import APIRouter
-from pydantic import BaseModel
-import spacy
+from fastapi import APIRouter # type: ignore
+from pydantic import BaseModel # type: ignore
+import spacy # type: ignore
 
 from ..data.faq import data as data
 
